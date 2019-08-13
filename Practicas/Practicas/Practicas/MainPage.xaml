@@ -4,9 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Practicas.MainPage">
+             x:Class="Practicas.MainPage"  BackgroundColor="AliceBlue">
 
-    <StackLayout VerticalOptions="Center" Padding="30">
+    <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+        <Image Source="TwitterLogo.jpg" />
+        <Label Text="Twitter" FontSize="64" TextColor="DarkBlue" FontAttributes="Bold" HorizontalOptions="Center"/>
         <Entry x:Name="UserEntry" Placeholder="Username" HorizontalOptions="FillAndExpand" />
         <Entry x:Name="PasswordEntry" Placeholder="Password" HorizontalOptions="FillAndExpand"  IsPassword="True"/>
         <Button Text="Login" FontSize="Large" BackgroundColor="DarkBlue" TextColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Clicked="OnClicked"/>
