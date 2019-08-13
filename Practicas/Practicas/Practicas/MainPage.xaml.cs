@@ -17,5 +17,22 @@ namespace Practicas
         {
             InitializeComponent();
         }
+
+        async void OnClicked(object ob, EventArgs ar)
+        {
+
+            if (UserEntry.Text.Length == 0)
+            {
+                await DisplayAlert("Error", "El campo de usuarios esta vacio", "Ok");
+            }else if(PasswordEntry.Text.Length == 0)
+            {
+                await DisplayAlert("Error", "El campo de password esta vacio", "Ok");
+            }
+            else
+            {
+                await DisplayAlert("Bienvenido", "Hola " + UserEntry.Text, "Ok");
+            }
+        }
     }
+
 }

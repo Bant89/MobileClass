@@ -6,11 +6,10 @@
              mc:Ignorable="d"
              x:Class="Practicas.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout VerticalOptions="Center" Padding="30">
+        <Entry x:Name="UserEntry" Placeholder="Username" HorizontalOptions="FillAndExpand" />
+        <Entry x:Name="PasswordEntry" Placeholder="Password" HorizontalOptions="FillAndExpand"  IsPassword="True"/>
+        <Button Text="Login" FontSize="Large" BackgroundColor="DarkBlue" TextColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Clicked="OnClicked"/>
     </StackLayout>
 
 </ContentPage>
