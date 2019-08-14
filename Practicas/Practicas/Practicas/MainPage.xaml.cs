@@ -21,16 +21,16 @@ namespace Practicas
         async void OnClicked(object ob, EventArgs ar)
         {
 
-            if (UserEntry.Text.Length == 0)
+            if (string.IsNullOrEmpty(UserEntry.Text))
             {
-                await DisplayAlert("Error", "El campo de usuarios esta vacio", "Ok");
-            }else if(PasswordEntry.Text.Length == 0)
+                await DisplayAlert("Error", "El campo de usuari@ esta vacio.", "Ok");
+            }else if(string.IsNullOrEmpty(PasswordEntry.Text))
             {
-                await DisplayAlert("Error", "El campo de password esta vacio", "Ok");
+                await DisplayAlert("Error", "El campo de clave esta vacio.", "Ok");
             }
             else
             {
-                await DisplayAlert("Bienvenido", "Hola " + UserEntry.Text, "Ok");
+                await DisplayAlert("Bienvenid@", $"Hola {UserEntry.Text}! ", "Ok");
             }
         }
     }
