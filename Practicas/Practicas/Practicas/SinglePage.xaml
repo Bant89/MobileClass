@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Practicas.SinglePage">
+    <ContentPage.Content>
+        <Frame BorderColor="Black">
+        <StackLayout>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Fancy Hotel" FontSize="Subtitle" FontAttributes="Bold"/>
+                    <Label Text="7 May 2018 | 4:26" FontSize="Medium"/>
+                    <Label Text="Mt Cormel Pt | New York, NY" FontSize="Medium"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Hostel" BorderColor="Black" WidthRequest="65" HeightRequest="40" HorizontalOptions="Start" CornerRadius="30" BackgroundColor="Transparent" BorderWidth="1"/>
+                        <Button Text="Hotel" BorderColor="Black" WidthRequest="65" HeightRequest="40" HorizontalOptions="Start" CornerRadius="30" BackgroundColor="Transparent" BorderWidth="1"/>
+                        <Button Text="Parking" BorderColor="Black" WidthRequest="80" HeightRequest="40" HorizontalOptions="Start" CornerRadius="30" BackgroundColor="Transparent" BorderWidth="1"/>
+                        <Button Text="Restaurant" BorderColor="Black" WidthRequest="100" HeightRequest="40" HorizontalOptions="Start" CornerRadius="30" BackgroundColor="Transparent" BorderWidth="1"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Room" BorderColor="Black" WidthRequest="65" HeightRequest="40" HorizontalOptions="Start" CornerRadius="30" BackgroundColor="Transparent" BorderWidth="1"/>
+                        <Button Text="Spa" BorderColor="Black" WidthRequest="65" HeightRequest="40" HorizontalOptions="Start" CornerRadius="30" BackgroundColor="Transparent" BorderWidth="1"/>
+                    </StackLayout>
+                    <Label Text="About Hotel" FontSize="Subtitle" FontAttributes="Bold"/>
+                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante ipsum, fringilla in massa et, lacinia semper leo. Nullam ac arcu mattis, blandit eros non, sollicitudin enim. Sed auctor, ipsum eu ultrices maximus, diam enim vehicula velit, et bibendum diam tortor ac eros. Fusce quis porta ligula. Nulla hendrerit ligula lacus, dignissim lobortis libero maximus et. Ut aliquet lectus ut neque bibendum, vel varius risus sagittis. Duis porttitor, velit vel imperdiet tincidunt, diam sapien cursus lorem, non accumsan nisi libero in ante. Sed at placerat nisl. Morbi sit amet enim tortor. "/>
+                    <Label Text="Nullam turpis lorem, vulputate id ornare sed, tempor ac arcu. Fusce eu est felis. Donec varius justo pellentesque convallis ultricies. Nam et luctus enim, id vehicula ex. Sed id sem iaculis, facilisis lorem quis, hendrerit metus. Ut lectus sem, viverra in ultrices pellentesque, convallis non magna. Ut non velit mauris." />
+                </StackLayout>
+             </Frame>
+        </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

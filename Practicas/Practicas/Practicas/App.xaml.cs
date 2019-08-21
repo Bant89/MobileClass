@@ -10,7 +10,8 @@ namespace Practicas
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+           // MainPage = new MainPage();
+            MainPage = new SinglePage();
         }
 
         protected override void OnStart()
