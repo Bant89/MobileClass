@@ -4,14 +4,44 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Practicas.MainPage">
+             x:Class="Practicas.MainPage"
+             BackgroundImageSource=""
+             >
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Algo lento pero funciona, nada mal" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Your Logo" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Red" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="Title"  VerticalTextAlignment="Center"/>
+        <Label Text="i" Grid.Row="0" Grid.Column="3" BackgroundColor="Green"  FontAttributes="Italic" HorizontalTextAlignment="Center" FontSize="Title" VerticalTextAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" 
+          HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  LineHeight="1.7"
+          TextColor="White"
+          BackgroundColor="Blue">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span  Text="Here you can place your own " FontSize="Title" />
+                    <Span Text="awesome image!" FontSize="Title"  FontAttributes="Bold"/>
+                </FormattedString>
+            </Label.FormattedText>
         
-    </StackLayout>
+        </Label>
+           
+        <Button Text="Weather" Grid.Row="2" Grid.Column="1"/>
+        <Button Text="Locations" Grid.Row="2" Grid.Column="2"/>
+        <Button Text="Crew" Grid.Row="3" Grid.Column="1"/>
+        <Button Text="Radio" Grid.Row="3" Grid.Column="2"/>
+    </Grid>
 
 </ContentPage>
