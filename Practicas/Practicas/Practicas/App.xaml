@@ -6,6 +6,34 @@
              mc:Ignorable="d"
              x:Class="Practicas.App">
     <Application.Resources>
+        <ResourceDictionary>
 
+            <Style TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="LightBlue"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="FontSize" Value="Subtitle" />
+                <Setter Property="TextDecorations" Value="Underline" />
+            </Style>
+
+            <Style TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

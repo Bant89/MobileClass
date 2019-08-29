@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Practicas.View.RegistryPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Entry Placeholder="Name"  Text="{Binding Name}"/>
+                <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding Email}"/>
+                <Entry Placeholder="Password" Text="{Binding Password}" />
+                <Entry Placeholder="Confirm Password" Text="{Binding ConfirmPassword}" />
+                <Button Text="Register" Command="{Binding RegisterCommand}"/>
+                <Label x:Name="ErrorLabel" Text="{Binding ErrorMessage}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

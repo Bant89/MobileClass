@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practicas.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -11,11 +12,12 @@ namespace Practicas
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    public partial class LoginPage : ContentPage
     {
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
+            this.BindingContext = new LoginPageViewModel();
         }
     }
 }
