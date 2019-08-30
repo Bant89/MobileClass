@@ -15,10 +15,13 @@ namespace Practicas.View
         public HomePage()
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            this.Master = new HomePageMaster();
+            this.Detail = new NavigationPage(new HomePageDetail());
+
+           // MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+      /*  private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as HomePageMasterMenuItem;
             if (item == null)
@@ -32,5 +35,6 @@ namespace Practicas.View
 
             MasterPage.ListView.SelectedItem = null;
         }
+        */
     }
 }

@@ -15,42 +15,13 @@ namespace Practicas.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePageMaster : ContentPage
     {
-        public ListView ListView;
 
         public HomePageMaster()
         {
             InitializeComponent();
 
-            BindingContext = new HomePageMasterViewModel();
-            ListView = MenuItemsListView;
         }
 
-        class HomePageMasterViewModel : INotifyPropertyChanged
-        {
-            public ObservableCollection<HomePageMasterMenuItem> MenuItems { get; set; }
-
-            public HomePageMasterViewModel()
-            {
-                MenuItems = new ObservableCollection<HomePageMasterMenuItem>(new[]
-                {
-                    new HomePageMasterMenuItem { Id = 0, Title = "Page 1" },
-                    new HomePageMasterMenuItem { Id = 1, Title = "Page 2" },
-                    new HomePageMasterMenuItem { Id = 2, Title = "Page 3" },
-                    new HomePageMasterMenuItem { Id = 3, Title = "Page 4" },
-                    new HomePageMasterMenuItem { Id = 4, Title = "Page 5" },
-                });
-            }
-
-            #region INotifyPropertyChanged Implementation
-            public event PropertyChangedEventHandler PropertyChanged;
-            void OnPropertyChanged([CallerMemberName] string propertyName = "")
-            {
-                if (PropertyChanged == null)
-                    return;
-
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-            #endregion
-        }
+       
     }
 }

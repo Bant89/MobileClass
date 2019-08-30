@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -30,7 +31,7 @@ namespace Practicas.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        void Login()
+        async void Login()
         {
             if (string.IsNullOrEmpty(Email))
             {
@@ -39,9 +40,14 @@ namespace Practicas.ViewModels
             {
                 ErrorMessage = "Campo de Password vacio";
 
+            }else
+            {
+                await App.Current.MainPage.DisplayAlert("Bienvenid@", $"Hola es un placer tener devuelta", "Ok");
+                
             }
 
              System.Diagnostics.Debug.WriteLine($"{Email} - {Password}");
         }
+
     }
 }

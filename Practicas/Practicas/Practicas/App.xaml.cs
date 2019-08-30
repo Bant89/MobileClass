@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practicas.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,6 +12,7 @@ namespace Practicas
             InitializeComponent();
 
             MainPage = new NavigationPage(new LoginPage());
+           // MainPage = new HomePage();
         }
 
         protected override void OnStart()
