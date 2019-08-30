@@ -9,6 +9,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                <Image Source="logo.png"/>
                 <Entry Placeholder="Name"  Text="{Binding Name}"/>
                 <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding Email}"/>
                 <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True"/>

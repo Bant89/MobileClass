@@ -4,10 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Practicas.LoginPage">
+             x:Class="Practicas.LoginPage"
+             NavigationPage.HasNavigationBar="False">
 
     <ScrollView>
         <StackLayout>
+            <Image Source="logo.png"/>
             <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding Email}"/>
             <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True"/>
             <Button Text="Login" Command="{Binding LoginCommand}"/>
