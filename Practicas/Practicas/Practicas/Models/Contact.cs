@@ -6,6 +6,8 @@ namespace Practicas.Models
 {
     class Contact
     {
+
+        public int ContactID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
@@ -19,8 +21,9 @@ namespace Practicas.Models
 
         public string Direction { get; set; }
 
-        public Contact(string firstName, string lastName, long phone)
+        public Contact(int id, string firstName, string lastName, long phone)
         {
+            this.ContactID = id;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Phone = phone;

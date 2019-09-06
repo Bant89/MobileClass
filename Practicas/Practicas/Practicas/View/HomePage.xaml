@@ -10,18 +10,18 @@
         <ToolbarItem Name="AddContact" Order="Primary" Text="ADD" Priority="0" Command="{Binding AddCommand}"/>
     </ContentPage.ToolbarItems>
   <ListView x:Name="MyListView"
-            ItemTapped="Handle_ItemTapped"
+            SelectedItem="{Binding SelectedContact}"
             CachingStrategy="RecycleElement"
-            ItemsSource="{Binding ContactList.List, Mode=TwoWay}">
+            ItemsSource="{Binding Contacts, Mode=TwoWay}">
     
     <!--Built in Cells-->
     <ListView.ItemTemplate>
         <DataTemplate>
                 <TextCell Text="{Binding FirstName}" Detail="{Binding LastName}">
                     <TextCell.ContextActions>
-                        <MenuItem Clicked="OnMore" CommandParameter="{Binding .}" Text="More" />
-                        <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True"/>
-                    </TextCell.ContextActions>            
+                        <MenuItem Command="{Binding Path=BindingContext.OnMoreCommand, Source={x:Reference MyListView}}" CommandParameter="{Binding .}" Text="More" />
+                        <MenuItem Command="{Binding Path=BindingContext.OnDeleteCommand, Source={x:Reference MyListView}}" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True"/>
+                    </TextCell.ContextActions>
                 </TextCell>
         </DataTemplate>
     </ListView.ItemTemplate>

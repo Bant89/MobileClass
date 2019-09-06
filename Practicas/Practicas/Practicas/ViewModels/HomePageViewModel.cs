@@ -6,23 +6,52 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Practicas.View;
-
+using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace Practicas.ViewModels
 {
      class HomePageViewModel : INotifyPropertyChanged
     {
-        public ContactList ContactList { get; set; }
 
+        public ObservableCollection<Contact> Contacts { get; set; } = new ObservableCollection<Contact>();
+
+        Contact contact;
+        public Contact SelectedContact {
+            get { return contact; }
+            set
+            {
+                contact = value;
+
+                if (contact != null)
+                    OnSelectItem(contact);
+            }
+        }
+
+        void OnSelectItem(Contact contact)
+        {
+            Contact contacto = new Contact(Contacts.Count, "Xavier", "Ortiz", 8293045678);
+            Contacts.Add(contacto);
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand AddCommand { get; set; }
 
+        public ICommand OnMoreCommand { get; set; }
+
+        public ICommand OnDeleteCommand { get; set; }
+
         public HomePageViewModel()
         {
-            ContactList = new ContactList();
+            this.Contacts = new ObservableCollection<Contact>
+            {
+                new Contact(1, "Juan", "Perez", 8291340099),
+                new Contact(2, "Sofia", "Perez", 8291340099)
+            };
+
             AddCommand = new Command(AddNavigation);
-            System.Diagnostics.Debug.WriteLine(ContactList);
+            OnDeleteCommand = new Command<Contact>(DeleteContact);
+            OnMoreCommand = new Command<Contact>(MoreContact);
         }
 
         async void AddNavigation()
@@ -30,6 +59,33 @@ namespace Practicas.ViewModels
             await App.Current.MainPage.Navigation.PushAsync(new AddPage());
         }
 
+        async void MoreContact(Contact value)
+        {
+            string call = $"Call +{value.Phone}";
+            var actionSheet = await App.Current.MainPage.DisplayActionSheet("More Menu", "Cancel", null, call, "Edit");
+
+            switch (actionSheet)
+            {
+                case "Edit":
+                    System.Diagnostics.Debug.WriteLine("Edit Clicked");
+                   break;
+
+                case "Cancel":
+                    System.Diagnostics.Debug.WriteLine("Cancel clicked");
+                   break;
+
+                default:
+                    Device.OpenUri(new Uri(String.Format("tel:{0}", $"+{value.Phone}")));
+                   break;
+            }
+
+        }
+
+        public void DeleteContact(Contact value)
+        { 
+            Contacts.Remove(value);
+        }
+        
        
     }
 }

@@ -19,21 +19,17 @@ namespace Practicas.View
         {
             InitializeComponent();
 
-            /*Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-
-            MyListView.ItemsSource = Items;*/
-
             this.BindingContext = new HomePageViewModel();
+
+            MyListView.ItemTapped += MyListView_ItemTapped;
         }
 
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void MyListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            MessagingCenter.Send<HomePage, string>(this, "STUDENTID", "HELLO");
+        }
+
+       /* async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null)
                 return;
@@ -44,5 +40,17 @@ namespace Practicas.View
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
+
+        public void OnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            DisplayAlert("Delete", mi.CommandParameter.ToString(), "OK");
+        }
+
+        public void OnMore(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            DisplayAlert("Edit", mi.CommandParameter.ToString(), "OK");
+        }*/
     }
 }
