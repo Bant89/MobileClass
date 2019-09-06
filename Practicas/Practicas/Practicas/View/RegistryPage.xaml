@@ -10,9 +10,9 @@
         <ScrollView>
             <StackLayout>
                 <Image Source="logo.png"/>
-                <Entry Placeholder="Name"  Text="{Binding Name}"/>
-                <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding Email}"/>
-                <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True"/>
+                <Entry Placeholder="Name"  Text="{Binding User.Name}"/>
+                <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding User.Email}"/>
+                <Entry Placeholder="Password" Text="{Binding User.Password}" IsPassword="True"/>
                 <Entry Placeholder="Confirm Password" Text="{Binding ConfirmPassword}" IsPassword="True"/>
                 <Button Text="Register" Command="{Binding RegisterCommand}"/>
             </StackLayout>

@@ -10,8 +10,8 @@
     <ScrollView>
         <StackLayout>
             <Image Source="logo.png"/>
-            <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding Email}"/>
-            <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True"/>
+            <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding CurrentUser.Email}"/>
+            <Entry Placeholder="Password" Text="{Binding CurrentUser.Password}" IsPassword="True"/>
             <Button Text="Login" Command="{Binding LoginCommand}"/>
             <Label Text="Registro">
                 <Label.GestureRecognizers>

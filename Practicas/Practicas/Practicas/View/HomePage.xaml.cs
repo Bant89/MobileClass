@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Practicas.ViewModels;
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -10,31 +11,38 @@ using Xamarin.Forms.Xaml;
 namespace Practicas.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : MasterDetailPage
+    public partial class HomePage : ContentPage
     {
+        public ObservableCollection<string> Items { get; set; }
+
         public HomePage()
         {
             InitializeComponent();
-            this.Master = new HomePageMaster();
-            this.Detail = new NavigationPage(new HomePageDetail());
 
-           // MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            /*Items = new ObservableCollection<string>
+            {
+                "Item 1",
+                "Item 2",
+                "Item 3",
+                "Item 4",
+                "Item 5"
+            };
+
+            MyListView.ItemsSource = Items;*/
+
+            this.BindingContext = new HomePageViewModel();
         }
 
-      /*  private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var item = e.SelectedItem as HomePageMasterMenuItem;
-            if (item == null)
+            if (e.Item == null)
                 return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
+            System.Diagnostics.Debug.WriteLine(e.Item.ToString());
+            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
 
-            Detail = new NavigationPage(page);
-            IsPresented = false;
-
-            MasterPage.ListView.SelectedItem = null;
+            //Deselect Item
+            ((ListView)sender).SelectedItem = null;
         }
-        */
     }
 }

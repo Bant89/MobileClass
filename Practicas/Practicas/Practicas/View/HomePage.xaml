@@ -1,19 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Practicas.View.HomePage"
-             xmlns:pages="clr-namespace:Practicas.View">
-  <MasterDetailPage.Master>
-    <pages:HomePageMaster x:Name="MasterPage" />
-  </MasterDetailPage.Master>
-  <MasterDetailPage.Detail>
-    <NavigationPage>
-      <x:Arguments>
-        <pages:HomePageDetail />
-      </x:Arguments>
-    </NavigationPage>
-  </MasterDetailPage.Detail>
-</MasterDetailPage>
+             Title="Contacts">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="AddContact" Order="Primary" Text="ADD" Priority="0" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
+  <ListView x:Name="MyListView"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+            ItemsSource="{Binding ContactList.List, Mode=TwoWay}">
+    
+    <!--Built in Cells-->
+    <ListView.ItemTemplate>
+        <DataTemplate>
+                <TextCell Text="{Binding FirstName}" Detail="{Binding LastName}">
+                    <TextCell.ContextActions>
+                        <MenuItem Clicked="OnMore" CommandParameter="{Binding .}" Text="More" />
+                        <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True"/>
+                    </TextCell.ContextActions>            
+                </TextCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+    
+    <!--Custom View Cells-->
+    <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   d:Text="{Binding .}"
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   d:Text="Detail"
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+  </ListView>
+</ContentPage>

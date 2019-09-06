@@ -10,8 +10,9 @@ using Xamarin.Forms;
 
 namespace Practicas.ViewModels
 {
-    class LoginPageViewModel : User, INotifyPropertyChanged
+    class LoginPageViewModel : INotifyPropertyChanged
     {
+        public User CurrentUser { get; set; } = new User();
         public string ErrorMessage { get; set; }
 
         public ICommand LoginCommand { get; set; }
@@ -33,20 +34,23 @@ namespace Practicas.ViewModels
 
         async void Login()
         {
-            if (string.IsNullOrEmpty(Email))
+            if (string.IsNullOrEmpty(CurrentUser.Email))
             {
                 ErrorMessage = "Campo de Email vacio";
-            }else if (string.IsNullOrEmpty(Password))
+            }else if (string.IsNullOrEmpty(CurrentUser.Password))
             {
                 ErrorMessage = "Campo de Password vacio";
 
             }else
             {
                 await App.Current.MainPage.DisplayAlert("Bienvenid@", $"Hola es un placer tener devuelta", "Ok");
-                
+
+
+                await App.Current.MainPage.Navigation.PushAsync(new HomePage());
+
             }
 
-             System.Diagnostics.Debug.WriteLine($"{Email} - {Password}");
+             System.Diagnostics.Debug.WriteLine($"{CurrentUser.Email} - {CurrentUser.Password}");
         }
 
     }

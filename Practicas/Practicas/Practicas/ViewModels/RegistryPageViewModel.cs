@@ -9,14 +9,14 @@ using Xamarin.Forms;
 
 namespace Practicas.ViewModels
 {
-    class RegistryPageViewModel : User, INotifyPropertyChanged
+    class RegistryPageViewModel : INotifyPropertyChanged
     {
-
-        public static MasterDetailPage MD { get; set; }
 
         public string ConfirmPassword { get; set; }
 
         public ICommand RegisterCommand { get; set; }
+
+        public User User { get; set; } = new User();
 
         public RegistryPageViewModel() {
 
@@ -25,22 +25,20 @@ namespace Practicas.ViewModels
 
         async void ConfirmRegistration() {
 
-            if (string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(ConfirmPassword) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Password))
+            if (string.IsNullOrEmpty(User.Password) || string.IsNullOrEmpty(ConfirmPassword) || string.IsNullOrEmpty(User.Email) || string.IsNullOrEmpty(User.Name) || string.IsNullOrEmpty(User.Password))
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Debe completar todos los campos.", "Ok");
             }
             else
             {
 
-                if (ConfirmPassword != Password)
+                if (ConfirmPassword != User.Password)
                 {
                     await App.Current.MainPage.DisplayAlert("Error", "La contraseña  y la contraseña  de confirmacion no son las mismas, porfavor chequear denuevo.", "Ok");
                 }
                 else
                 {
-                    MD = new HomePage();
-
-                    App.Current.MainPage = MD;
+                    await App.Current.MainPage.Navigation.PushAsync(new HomePage());
                 }
             }
         }
