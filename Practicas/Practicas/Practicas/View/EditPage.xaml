@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Practicas.View.EditPage"
+             Title="Edit Contact">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Entry x:Name="ContactFirstName" Placeholder="{Binding Path=Contact.FirstName}" VerticalOptions="Start" Text="{Binding Path=Contact.FirstName}"/>
+
+            <Entry x:Name="ContactLastName" Placeholder="{Binding Contact.LastName}" VerticalOptions="Start" Text="{Binding Contact.LastName}"/>
+
+            <Entry x:Name="ContactCompany" Placeholder="Name" VerticalOptions="Start"/>
+
+            <Entry x:Name="ContactPhoneNumber" Placeholder="Name" VerticalOptions="Start"/>
+
+            <Entry x:Name="ContactMobileNumber" Placeholder="Number" Keyboard="Numeric"  VerticalOptions="Start"/>
+
+            <Entry x:Name="ContactEmail" Placeholder="Number" Keyboard="Email"  VerticalOptions="Start"/>
+
+            <Entry x:Name="ContactDirection" Placeholder="Number" VerticalOptions="Start"/>
+
+            <Button Text="Edit" Command="{Binding EditCommand}" VerticalOptions="EndAndExpand"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

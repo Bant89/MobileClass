@@ -29,5 +29,7 @@ namespace Practicas.Models
             this.Phone = phone;
         }
 
+        public Contact() { }
+
     }
 }

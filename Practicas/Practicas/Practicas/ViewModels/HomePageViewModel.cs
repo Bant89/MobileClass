@@ -49,6 +49,13 @@ namespace Practicas.ViewModels
                 new Contact(2, "Sofia", "Perez", 8291340099)
             };
 
+            MessagingCenter.Subscribe<AddPageViewModel, Contact>(this, "AddContact", (sender, param) =>
+            {
+                Contacts.Add(param);
+                MessagingCenter.Unsubscribe<AddPageViewModel, Contact>(this, "AddContact");
+            });
+
+
             AddCommand = new Command(AddNavigation);
             OnDeleteCommand = new Command<Contact>(DeleteContact);
             OnMoreCommand = new Command<Contact>(MoreContact);
@@ -61,13 +68,13 @@ namespace Practicas.ViewModels
 
         async void MoreContact(Contact value)
         {
-            string call = $"Call +{value.Phone}";
-            var actionSheet = await App.Current.MainPage.DisplayActionSheet("More Menu", "Cancel", null, call, "Edit");
+            var actionSheet = await App.Current.MainPage.DisplayActionSheet("Menu", "Cancel", null, $"Call +{value.Phone}", "Edit");
 
-            switch (actionSheet)
+             switch (actionSheet)
             {
                 case "Edit":
-                    System.Diagnostics.Debug.WriteLine("Edit Clicked");
+                    MessagingCenter.Send<HomePageViewModel, Contact>(this, "EditContact", value);
+                    await App.Current.MainPage.Navigation.PushAsync(new EditPage());
                    break;
 
                 case "Cancel":
