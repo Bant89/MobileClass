@@ -9,40 +9,14 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <Label Text="First Name:"  HorizontalOptions="Start"/>
-                    <Entry x:Name="ContactFirstName" HorizontalOptions="FillAndExpand" Placeholder="Name" VerticalOptions="Start" Text="{Binding contact.FirstName, Mode=TwoWay}"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <Label Text="Last Name:"  HorizontalOptions="Start"/>
-                    <Entry x:Name="ContactLastName" HorizontalOptions="FillAndExpand" Placeholder="Name" VerticalOptions="Start" Text="{Binding contact.LastName, Mode=TwoWay}"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <Label Text="Company Name:"  HorizontalOptions="Start"/>
-                    <Entry x:Name="ContactCompany"  HorizontalOptions="FillAndExpand" Placeholder="Name" VerticalOptions="Start" Text="{Binding contact.Company, Mode=TwoWay}"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <Label Text="Phone Number:"  HorizontalOptions="Start"/>
-                    <Entry x:Name="ContactPhoneNumber" HorizontalOptions="FillAndExpand"  Placeholder="Name" VerticalOptions="Start" Text="{Binding contact.Phone, Mode=TwoWay}"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <Label Text="Mobile Phone Number:"  HorizontalOptions="Start"/>
-                    <Entry x:Name="ContactMobileNumber" HorizontalOptions="FillAndExpand"  Placeholder="Number" Keyboard="Numeric"  VerticalOptions="Start" Text="{Binding contact.Mobile, Mode=TwoWay}"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <Label Text="Email:"  HorizontalOptions="Start"/>
-                    <Entry x:Name="ContactEmail"  HorizontalOptions="FillAndExpand"  Placeholder="Number" Keyboard="Email"  VerticalOptions="Start" Text="{Binding contact.Email, Mode=TwoWay}"/>
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <Label Text="Direction:"  HorizontalOptions="Start"/>
-                    <Entry x:Name="ContactDirection" HorizontalOptions="FillAndExpand"  Placeholder="Direction" VerticalOptions="Start" Text="{Binding contact.Direction, Mode=TwoWay}"/>
-                </StackLayout>
-
+                <Entry x:Name="ContactFirstName" HorizontalOptions="FillAndExpand" Placeholder="First Name" VerticalOptions="Start" Text="{Binding contact.FirstName, Mode=TwoWay}"/>
+                   <Entry x:Name="ContactLastName" HorizontalOptions="FillAndExpand" Placeholder="Last Name" VerticalOptions="Start" Text="{Binding contact.LastName, Mode=TwoWay}"/>
+                    <Entry x:Name="ContactCompany"  HorizontalOptions="FillAndExpand" Placeholder="Contact Company" VerticalOptions="Start" Text="{Binding contact.Company, Mode=TwoWay}"/>
+                   <Entry x:Name="ContactPhoneNumber" HorizontalOptions="FillAndExpand"  Placeholder="Phone Number" VerticalOptions="Start" Text="{Binding contact.Phone, Mode=TwoWay}"/>
+                    <Entry x:Name="ContactMobileNumber" HorizontalOptions="FillAndExpand"  Placeholder="Mobile Number" Keyboard="Numeric"  VerticalOptions="Start" Text="{Binding contact.Mobile, Mode=TwoWay}"/>
+                    <Entry x:Name="ContactEmail"  HorizontalOptions="FillAndExpand"  Placeholder="Email" Keyboard="Email"  VerticalOptions="Start" Text="{Binding contact.Email, Mode=TwoWay}"/>
+                   <Entry x:Name="ContactDirection" HorizontalOptions="FillAndExpand"  Placeholder="Direction" VerticalOptions="Start" Text="{Binding contact.Direction, Mode=TwoWay}"/>
+               
                 <Button Text="Add" Command="{Binding AddCommand}" VerticalOptions="EndAndExpand"/>
             </StackLayout>
         </ScrollView>

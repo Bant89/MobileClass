@@ -8,19 +8,19 @@
              Title="Edit Contact">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Entry x:Name="ContactFirstName" Placeholder="{Binding Path=Contact.FirstName}" VerticalOptions="Start" Text="{Binding Path=Contact.FirstName}"/>
+            <Entry x:Name="ContactFirstName" VerticalOptions="Start" Text="{Binding Path=Contact.FirstName}"/>
 
-            <Entry x:Name="ContactLastName" Placeholder="{Binding Contact.LastName}" VerticalOptions="Start" Text="{Binding Contact.LastName}"/>
+            <Entry x:Name="ContactLastName" VerticalOptions="Start" Text="{Binding Contact.LastName}"/>
 
-            <Entry x:Name="ContactCompany" Placeholder="Name" VerticalOptions="Start"/>
+            <Entry x:Name="ContactCompany" Placeholder="Name" VerticalOptions="Start" Text="{Binding Contact.Company}"/>
 
-            <Entry x:Name="ContactPhoneNumber" Placeholder="Name" VerticalOptions="Start"/>
+            <Entry x:Name="ContactPhoneNumber" Placeholder="Name" VerticalOptions="Start" Text="{Binding Contact.Phone}"/>
 
-            <Entry x:Name="ContactMobileNumber" Placeholder="Number" Keyboard="Numeric"  VerticalOptions="Start"/>
+            <Entry x:Name="ContactMobileNumber" Placeholder="Number" Keyboard="Numeric"  VerticalOptions="Start" Text="{Binding Contact.Mobile}"/>
 
-            <Entry x:Name="ContactEmail" Placeholder="Number" Keyboard="Email"  VerticalOptions="Start"/>
+            <Entry x:Name="ContactEmail" Placeholder="Number" Keyboard="Email"  VerticalOptions="Start" Text="{Binding Contact.Email}"/>
 
-            <Entry x:Name="ContactDirection" Placeholder="Number" VerticalOptions="Start"/>
+            <Entry x:Name="ContactDirection" Placeholder="Number" VerticalOptions="Start" Text="{Binding Contact.Direction}"/>
 
             <Button Text="Edit" Command="{Binding EditCommand}" VerticalOptions="EndAndExpand"/>
             

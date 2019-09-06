@@ -30,8 +30,8 @@ namespace Practicas.ViewModels
 
         void OnSelectItem(Contact contact)
         {
-            Contact contacto = new Contact(Contacts.Count, "Xavier", "Ortiz", 8293045678);
-            Contacts.Add(contacto);
+           /* Contact contacto = new Contact(Contacts.Count, "Xavier", "Ortiz", 8293045678);
+            Contacts.Add(contacto);*/
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -43,18 +43,32 @@ namespace Practicas.ViewModels
 
         public HomePageViewModel()
         {
-            this.Contacts = new ObservableCollection<Contact>
+            /*this.Contacts = new ObservableCollection<Contact>
             {
-                new Contact(1, "Juan", "Perez", 8291340099),
-                new Contact(2, "Sofia", "Perez", 8291340099)
-            };
+                new Contact( "Juan", "Perez", 8291340099),
+                new Contact( "Sofia", "Perez", 8291340099)
+            };*/
 
             MessagingCenter.Subscribe<AddPageViewModel, Contact>(this, "AddContact", (sender, param) =>
             {
+                param.ID = Contacts.Count;
                 Contacts.Add(param);
                 MessagingCenter.Unsubscribe<AddPageViewModel, Contact>(this, "AddContact");
             });
 
+
+            MessagingCenter.Subscribe<EditPageViewModel, Contact>(this, "EditedContact", ((sender, param) =>
+            {
+                for(int i = 0; i < Contacts.Count; i++)
+                {
+                    if(Contacts[i].ID == param.ID)
+                    {
+                        Contacts[i] = param;
+                    }
+                }
+               
+                MessagingCenter.Unsubscribe<EditPageViewModel, Contact>(this, "EditedContact");
+            }));
 
             AddCommand = new Command(AddNavigation);
             OnDeleteCommand = new Command<Contact>(DeleteContact);
@@ -73,9 +87,9 @@ namespace Practicas.ViewModels
              switch (actionSheet)
             {
                 case "Edit":
-                    MessagingCenter.Send<HomePageViewModel, Contact>(this, "EditContact", value);
                     await App.Current.MainPage.Navigation.PushAsync(new EditPage());
-                   break;
+                    MessagingCenter.Send<HomePageViewModel, Contact>(this, "EditContact", value);
+                    break;
 
                 case "Cancel":
                     System.Diagnostics.Debug.WriteLine("Cancel clicked");
@@ -93,6 +107,5 @@ namespace Practicas.ViewModels
             Contacts.Remove(value);
         }
         
-       
     }
 }

@@ -24,11 +24,9 @@ namespace Practicas.ViewModels
 
         async void AddContact()
         {
-
             MessagingCenter.Send<AddPageViewModel, Contact>(this, "AddContact", contact);
             await Application.Current.MainPage.Navigation.PopAsync();
         }
-
 
     }
 }

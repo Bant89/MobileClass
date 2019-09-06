@@ -25,12 +25,14 @@ namespace Practicas.ViewModels
                 MessagingCenter.Unsubscribe<HomePageViewModel, Contact>(this, "EditContact");
             }));
 
-            EditCommand = new Command<Contact>(EditContact);
+            EditCommand = new Command(EditContact);
         }
 
 
-        public void EditContact(Contact value)
+        async public void EditContact()
         {
+            MessagingCenter.Send<EditPageViewModel, Contact>(this, "EditedContact", Contact);
+            await Application.Current.MainPage.Navigation.PopAsync();
 
         }
     }
