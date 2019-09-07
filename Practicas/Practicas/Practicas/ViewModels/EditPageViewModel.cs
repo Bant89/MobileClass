@@ -11,7 +11,6 @@ namespace Practicas.ViewModels
     class EditPageViewModel : INotifyPropertyChanged
     {
         public Contact Contact { get; set; }
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand EditCommand { get; set; }
 
@@ -28,6 +27,7 @@ namespace Practicas.ViewModels
             EditCommand = new Command(EditContact);
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
         async public void EditContact()
         {

@@ -23,6 +23,8 @@ namespace Practicas.ViewModels
             RegisterCommand = new Command(ConfirmRegistration);
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         async void ConfirmRegistration() {
 
             if (string.IsNullOrEmpty(User.Password) || string.IsNullOrEmpty(ConfirmPassword) || string.IsNullOrEmpty(User.Email) || string.IsNullOrEmpty(User.Name) || string.IsNullOrEmpty(User.Password))
@@ -43,6 +45,5 @@ namespace Practicas.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

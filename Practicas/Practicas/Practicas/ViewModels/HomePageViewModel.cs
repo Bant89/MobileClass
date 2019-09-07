@@ -43,17 +43,13 @@ namespace Practicas.ViewModels
 
         public HomePageViewModel()
         {
-            /*this.Contacts = new ObservableCollection<Contact>
-            {
-                new Contact( "Juan", "Perez", 8291340099),
-                new Contact( "Sofia", "Perez", 8291340099)
-            };*/
-
+           
             MessagingCenter.Subscribe<AddPageViewModel, Contact>(this, "AddContact", (sender, param) =>
             {
                 param.ID = Contacts.Count;
                 Contacts.Add(param);
-                MessagingCenter.Unsubscribe<AddPageViewModel, Contact>(this, "AddContact");
+              //  MessagingCenter.Unsubscribe<AddPageViewModel, Contact>(this, "AddContact");
+
             });
 
 
@@ -67,7 +63,7 @@ namespace Practicas.ViewModels
                     }
                 }
                
-                MessagingCenter.Unsubscribe<EditPageViewModel, Contact>(this, "EditedContact");
+               // MessagingCenter.Unsubscribe<EditPageViewModel, Contact>(this, "EditedContact");
             }));
 
             AddCommand = new Command(AddNavigation);

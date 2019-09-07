@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Practicas.Models
 {
-    class Contact
+    class Contact : INotifyPropertyChanged
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
@@ -29,5 +30,6 @@ namespace Practicas.Models
 
         public Contact() { }
 
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

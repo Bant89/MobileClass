@@ -25,12 +25,13 @@ namespace Practicas.ViewModels
             RegistryCommand = new Command(RegistryNavigation);
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         async void RegistryNavigation()
         {
             await App.Current.MainPage.Navigation.PushAsync(new RegistryPage());
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         async void Login()
         {
