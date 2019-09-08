@@ -28,11 +28,15 @@ namespace Practicas.ViewModels
             }
         }
 
-        void OnSelectItem(Contact contact)
+        async void OnSelectItem(Contact contact)
         {
-           /* Contact contacto = new Contact(Contacts.Count, "Xavier", "Ortiz", 8293045678);
-            Contacts.Add(contacto);*/
+            // System.Diagnostics.Debug.WriteLine(contact.FirstName);
+            await App.Current.MainPage.Navigation.PushAsync(new DetailPage());
+            MessagingCenter.Send<HomePageViewModel, Contact>(this, "DetailContact", contact);
+
         }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand AddCommand { get; set; }
