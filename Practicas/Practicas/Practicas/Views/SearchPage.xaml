@@ -16,13 +16,11 @@
                   x:Name="listv">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding authorDisplayName}"/>
-                                <Label Text="{Binding textDisplay}"/>
-                                <Label Text="{Binding publishedAt}"/>
-                            </StackLayout>
-                        </ViewCell>
+                        <ImageCell Height="30"
+                                   Text="{Binding authorDisplayName}"
+                                   Detail="{Binding textDisplay}"
+                                   ImageSource="{Binding authorProfileImageUrl}">
+                        </ImageCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

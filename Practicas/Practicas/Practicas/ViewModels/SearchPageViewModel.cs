@@ -40,7 +40,7 @@ namespace Practicas.ViewModels
                         Resultados = await ApiService.GetGomments();
                         for (int i = 0; i < Resultados.items.Count; i++)
                         {
-                            Snippets.Add(Resultados.items[i].snippet);
+                            Snippets.Add(Resultados.items[i].snip.topLevelComment.Snippet);
                         }
 
                         System.Diagnostics.Debug.WriteLine("Probando");

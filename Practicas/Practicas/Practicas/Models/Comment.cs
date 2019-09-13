@@ -66,10 +66,10 @@ namespace Practicas.Models
         public string id { get; set; }
 
         [JsonProperty("snippet")]
-        public Snippet snippet { get; set; }
+        public Snippet Snippet { get; set; }
     }
 
-    public class snippet
+    public class snip
     {
 
         [JsonProperty("topLevelComment")]
@@ -80,7 +80,7 @@ namespace Practicas.Models
     {
 
         [JsonProperty("snippet")]
-        public Snippet snippet { get; set; }
+        public snip snip { get; set; }
     }
 
     public class Comment
