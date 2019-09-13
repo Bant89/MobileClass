@@ -6,12 +6,7 @@
              mc:Ignorable="d"
              x:Class="Practicas.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Algo lento pero funciona, nada mal" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        
+    <StackLayout VerticalOptions="Center">
     </StackLayout>
 
 </ContentPage>

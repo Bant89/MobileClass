@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Practicas.Services;
+using Practicas.Views;
 
 namespace Practicas
 {
@@ -10,12 +12,14 @@ namespace Practicas
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SearchPage();
         }
 
-        protected override void OnStart()
+         protected override void OnStart()
         {
             // Handle when your app starts
+            
+
         }
 
         protected override void OnSleep()

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practicas.Android", "Practi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practicas.iOS", "Practicas\Practicas.iOS\Practicas.iOS.csproj", "{1B49B4F6-DED8-451F-A27D-4F17A3BC611F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practicas", "Practicas\Practicas\Practicas.csproj", "{B881A718-1F7F-4752-B831-F25E0C29E03C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practicas", "Practicas\Practicas\Practicas.csproj", "{B881A718-1F7F-4752-B831-F25E0C29E03C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
