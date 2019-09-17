@@ -60,8 +60,13 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Effects\BorderlessEffectiOS.cs" />
+    <Compile Include="Effects\FocusEffectiOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderers\CustomEntryiOS.cs" />
+    <Compile Include="Renderers\ExtendedEntryiOS.cs" />
+    <Compile Include="Services\DeviceOrientationiOS.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
