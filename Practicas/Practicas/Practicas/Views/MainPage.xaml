@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <views:SKCanvasView x:Name="PaintSample" PaintSurface="OnPainting" EnableTouchEvents="True" Touch="OnTouch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <views:SKCanvasView x:Name="PaintSample" PaintSurface="{Binding OnPainting}" EnableTouchEvents="True" Touch="{Binding OnTouch}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
         <BoxView Grid.Row="1" BackgroundColor="#fc2003" Grid.Column="0" />
         <BoxView Grid.Row="1" BackgroundColor="#04a5f0" Grid.Column="1" />
         <BoxView Grid.Row="1" BackgroundColor="#81bb05" Grid.Column="2" />
