@@ -21,4 +21,18 @@
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.673156" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

@@ -1,28 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Windows.Input;
+﻿
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
-namespace Practicas.ViewModels
+namespace Practicas
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    // Learn more about making custom code visible in the Xamarin.Forms previewer
+    // by visiting https://aka.ms/xamarinforms-previewer
+    [DesignTimeVisible(false)]
+    public partial class MainPage : ContentPage
     {
+        public MainPage()
+        {
+            InitializeComponent();
+        }
 
         private List<SKPath> paths = new List<SKPath>();
         private Dictionary<long, SKPath> temporaryPaths = new Dictionary<long, SKPath>();
 
-        public ICommand OnPaintingCommand;
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public MainPageViewModel()
-        {
-            OnPaintingCommand = new ICommand<object, SKPaintSurfaceEventArgs>OnPainting;
-        }
-
-        public void OnPainting(object sender, SKPaintSurfaceEventArgs e)
+        private void OnPainting(object sender, SKPaintSurfaceEventArgs e)
         {
             var surface = e.Surface;
             var canvas = surface.Canvas;
@@ -42,7 +45,7 @@ namespace Practicas.ViewModels
             }
         }
 
-        public void OnTouch(object sender, SKTouchEventArgs e)
+        private void OnTouch(object sender, SKTouchEventArgs e)
         {
 
             switch (e.ActionType)
