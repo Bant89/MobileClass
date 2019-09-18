@@ -16,33 +16,35 @@ namespace Practicas
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+      
+        private List<SKPath> paths = new List<SKPath>();
+        private Dictionary<long, SKPath> temporaryPaths = new Dictionary<long, SKPath>();
+        public SKColor touchPathColor = SKColors.OrangeRed;
+        public int lineas = 0;
         public MainPage()
         {
             InitializeComponent();
+            
         }
-
-        private List<SKPath> paths = new List<SKPath>();
-        private Dictionary<long, SKPath> temporaryPaths = new Dictionary<long, SKPath>();
-
 
         private void OnPainting(object sender, SKPaintSurfaceEventArgs e)
         {
-            var surface = e.Surface;
-            var canvas = surface.Canvas;
+                var surface = e.Surface;
+                var canvas = surface.Canvas;
+                
+                var touchPathStroke = new SKPaint
+                {
+                    Color = touchPathColor,
+                    StrokeWidth = 20,
+                    Style = SKPaintStyle.Stroke
+                };
 
-            canvas.Clear(SKColors.AliceBlue);
-
-            var touchPathStroke = new SKPaint
-            {
-                Color = SKColors.OrangeRed,
-                StrokeWidth = 2,
-                Style = SKPaintStyle.Stroke
-            };
-
-            foreach (var touchPath in paths)
-            {
-                canvas.DrawPath(touchPath, touchPathStroke);
-            }
+                for (int i = lineas; i < paths.Count; i++)
+                {
+                    var touchPath = paths[i];
+                    canvas.DrawPath(touchPath, touchPathStroke);
+                    lineas++;
+                }
         }
 
         private void OnTouch(object sender, SKTouchEventArgs e)
@@ -70,6 +72,20 @@ namespace Practicas
             // update the UI on the screen
             ((SKCanvasView)sender).InvalidateSurface();
 
+        }
+
+        void OnTapRecognized(object sender, EventArgs args)
+        {
+            var BoxSender = (BoxView)sender;
+            touchPathColor = new SKColor((byte)(BoxSender.BackgroundColor.R * 255), 
+                (byte)(BoxSender.BackgroundColor.G * 255), 
+                (byte)(BoxSender.BackgroundColor.B * 255), 
+                (byte)(BoxSender.BackgroundColor.A * 255));
+            System.Diagnostics.Debug.WriteLine(BoxSender.BackgroundColor);
+        }
+
+        void OnClearButtonClicked(object sender, EventArgs args)
+        {
         }
 
     }

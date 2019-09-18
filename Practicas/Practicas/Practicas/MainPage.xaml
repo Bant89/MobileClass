@@ -20,17 +20,40 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <views:SKCanvasView x:Name="PaintSample" PaintSurface="OnPainting" EnableTouchEvents="True" Touch="OnTouch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
-        <BoxView Grid.Row="1" BackgroundColor="#fc2003" Grid.Column="0" />
-        <BoxView Grid.Row="1" BackgroundColor="#04a5f0" Grid.Column="1" />
-        <BoxView Grid.Row="1" BackgroundColor="#81bb05" Grid.Column="2" />
-        <BoxView Grid.Row="2" BackgroundColor="#ffba07" Grid.Column="0" />
-        <BoxView Grid.Row="2" BackgroundColor="#fa9d32" Grid.Column="1" />
-        <BoxView Grid.Row="2" BackgroundColor="#b800eb" Grid.Column="2" />
-        <Button Grid.Row="3" Text="Clear Canvas" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                BorderRadius="0" BackgroundColor="LightGray" Margin="0" BorderWidth="0"/>
-        <Button Grid.Row="3" Text="Save Image" Grid.Column="1" BorderWidth="0" BorderRadius="0" BackgroundColor="LightGray" Margin="0" />
-        <Button Grid.Row="3" Text="Upload Image" Grid.Column="2"
-          BorderRadius="0" BackgroundColor="LightGray" Margin="0" BorderWidth="0" />
+        <BoxView Grid.Row="1" BackgroundColor="#fc2003" Grid.Column="0">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapRecognized"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="1" BackgroundColor="#04a5f0" Grid.Column="1">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapRecognized"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="1" BackgroundColor="#81bb05" Grid.Column="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapRecognized"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="2" BackgroundColor="#fffb14" Grid.Column="0">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapRecognized"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="2" BackgroundColor="#fa9d32" Grid.Column="1">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapRecognized"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="2" BackgroundColor="#b800eb" Grid.Column="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapRecognized"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Button Grid.Row="3" Text="Clear Canvas" Grid.Column="0" Grid.ColumnSpan="3"
+                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                BorderRadius="0" BackgroundColor="LightGray" Margin="0" BorderWidth="0" Clicked="OnClearButtonClicked"/>
+        
     </Grid>
 
 </ContentPage>
