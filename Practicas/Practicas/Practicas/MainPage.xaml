@@ -3,15 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              mc:Ignorable="d"
              x:Class="Practicas.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Algo lento pero funciona, nada mal" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        
-    </StackLayout>
+    <Grid ColumnSpacing="0" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <views:SKCanvasView x:Name="PaintSample" PaintSurface="OnPainting" EnableTouchEvents="True" Touch="OnTouch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <BoxView Grid.Row="1" BackgroundColor="#fc2003" Grid.Column="0" />
+        <BoxView Grid.Row="1" BackgroundColor="#04a5f0" Grid.Column="1" />
+        <BoxView Grid.Row="1" BackgroundColor="#81bb05" Grid.Column="2" />
+        <BoxView Grid.Row="2" BackgroundColor="#ffba07" Grid.Column="0" />
+        <BoxView Grid.Row="2" BackgroundColor="#fa9d32" Grid.Column="1" />
+        <BoxView Grid.Row="2" BackgroundColor="#b800eb" Grid.Column="2" />
+        <Button Grid.Row="3" Text="Clear Canvas" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                BorderRadius="0" BackgroundColor="LightGray" Margin="0" BorderWidth="0"/>
+        <Button Grid.Row="3" Text="Save Image" Grid.Column="1" BorderWidth="0" BorderRadius="0" BackgroundColor="LightGray" Margin="0" />
+        <Button Grid.Row="3" Text="Upload Image" Grid.Column="2"
+          BorderRadius="0" BackgroundColor="LightGray" Margin="0" BorderWidth="0" />
+    </Grid>
 
 </ContentPage>
