@@ -4,14 +4,51 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Practicas.MainPage">
+             x:Class="Practicas.MainPage"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="True"
+             Title="Basic Calculator"
+             NavigationPage.HasBackButton="False">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Algo lento pero funciona, nada mal" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        
-    </StackLayout>
+    <Grid RowSpacing="1" ColumnSpacing="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="Probandoasidalksjdklasjdkajsdjasdjasjdasjd &#10; esto" Grid.Column="0" Grid.Row="1" TextColor="White" Grid.ColumnSpan="4">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Contenido &#10;"/>
+                    <Span Text="Resultado" FontAttributes="Bold"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button Text="7" Grid.Column="0" Grid.Row="2"/>
+        <Button Text="4" Grid.Column="0" Grid.Row="3"/>
+        <Button Text="1" Grid.Column="0" Grid.Row="4"/>
+        <Button Text="CE" Grid.Column="0" Grid.Row="5"/>
+        <Button Text="8" Grid.Column="1" Grid.Row="2"/>
+        <Button Text="5" Grid.Column="1" Grid.Row="3"/>
+        <Button Text="2" Grid.Column="1" Grid.Row="4"/>
+        <Button Text="0" Grid.Column="1" Grid.Row="5"/>
+        <Button Text="9" Grid.Column="2" Grid.Row="2"/>
+        <Button Text="6" Grid.Column="2" Grid.Row="3"/>
+        <Button Text="3" Grid.Column="2" Grid.Row="4"/>
+        <Button Text="=" Grid.Column="2" Grid.Row="5"/>
+        <Button Text="/" Grid.Column="3" Grid.Row="2"/>
+        <Button Text="X" Grid.Column="3" Grid.Row="3"/>
+        <Button Text="-" Grid.Column="3" Grid.Row="4"/>
+        <Button Text="+" Grid.Column="3" Grid.Row="5"/>
+    </Grid>
 
 </ContentPage>
