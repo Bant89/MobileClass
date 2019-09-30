@@ -26,8 +26,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="2">
-            <!--<Label.BackgroundColor>
-                <Color x:FactoryMethod="FromHsla">
+            <!--<Label.BackgroundColor> 
+                <Color x:FactoryMethod="FromHsla"> doesn't work =(
                     <x:Arguments>
                         <x:Double>100</x:Double>
                         <x:Double>100</x:Double>
@@ -38,27 +38,27 @@
             </Label.BackgroundColor>-->
             <Label.FormattedText>
                 <FormattedString>
-                    <Span Text="Contenido &#10;"/>
-                    <Span Text="Resultado" FontAttributes="Bold"/>
+                    <Span Text="Resultado es &#10;"/>
+                    <Span x:Name="ResultSpan" Text="" FontAttributes="Bold"/>
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <Button Text="7" Grid.Column="0" Grid.Row="2" BorderColor="Yellow"/>
-        <Button Text="4" Grid.Column="0" Grid.Row="3"/>
-        <Button Text="1" Grid.Column="0" Grid.Row="4"/>
-        <Button Text="CE" Grid.Column="0" Grid.Row="5"/>
-        <Button Text="8" Grid.Column="1" Grid.Row="2"/>
-        <Button Text="5" Grid.Column="1" Grid.Row="3"/>
-        <Button Text="2" Grid.Column="1" Grid.Row="4"/>
-        <Button Text="0" Grid.Column="1" Grid.Row="5"/>
-        <Button Text="9" Grid.Column="2" Grid.Row="2"/>
-        <Button Text="6" Grid.Column="2" Grid.Row="3"/>
-        <Button Text="3" Grid.Column="2" Grid.Row="4"/>
-        <Button Text="=" Grid.Column="2" Grid.Row="5"/>
-        <Button Text="/" Grid.Column="3" Grid.Row="2"/>
-        <Button Text="&#128581;" Grid.Column="3" Grid.Row="3"/>
-        <Button Text="-" Grid.Column="3" Grid.Row="4"/>
-        <Button Text="+" Grid.Column="3" Grid.Row="5"/>
+        <Button Text="7" Grid.Column="0" Grid.Row="2" Clicked="OnClicked"/>
+        <Button Text="4" Grid.Column="0" Grid.Row="3" Clicked="OnClicked"/>
+        <Button Text="1" Grid.Column="0" Grid.Row="4" Clicked="OnClicked"/>
+        <Button Text="CE" Grid.Column="0" Grid.Row="5" Clicked="OnClearClicked"/>
+        <Button Text="8" Grid.Column="1" Grid.Row="2" Clicked="OnClicked"/>
+        <Button Text="5" Grid.Column="1" Grid.Row="3" Clicked="OnClicked"/>
+        <Button Text="2" Grid.Column="1" Grid.Row="4" Clicked="OnClicked"/>
+        <Button Text="0" Grid.Column="1" Grid.Row="5" Clicked="OnClicked"/>
+        <Button Text="9" Grid.Column="2" Grid.Row="2" Clicked="OnClicked"/>
+        <Button Text="6" Grid.Column="2" Grid.Row="3" Clicked="OnClicked"/>
+        <Button Text="3" Grid.Column="2" Grid.Row="4" Clicked="OnClicked"/>
+        <Button Text="=" Grid.Column="2" Grid.Row="5" Clicked="OnOperatorClicked"/>
+        <Button Text="/" Grid.Column="3" Grid.Row="2" Clicked="OnOperatorClicked"/>
+        <Button Text="&#128581;" Grid.Column="3" Grid.Row="3" Clicked="OnOperatorClicked"/>
+        <Button Text="-" Grid.Column="3" Grid.Row="4" Clicked="OnOperatorClicked"/>
+        <Button Text="+" Grid.Column="3" Grid.Row="5" Clicked="OnOperatorClicked"/>
     </Grid>
 
 </ContentPage>
