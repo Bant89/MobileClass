@@ -8,8 +8,14 @@
     <Application.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="Black"/>
+               
+                <Setter Property="BackgroundColor" Value="DarkBlue"/>
                 <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+            <Style TargetType="Span">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="30"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>
